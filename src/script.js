@@ -1,5 +1,9 @@
-import {city, search} from "./selectors/selector";
-import {APIKEY} from "./selectors/api";
+const APIKEY = '4c886eb8701ec4f4190eefaeb88b168d';
+const container = document.querySelector('.container');
+const weatherBox = document.querySelector('.weather-box');
+const search = document.querySelector('.search-box');
+const weatherDetails = document.querySelector('.weather-details');
+const city = document.querySelector('.search-box input').value;
 
 search.addEventListener('click', ()=> {
     if (city === ""){
@@ -16,7 +20,7 @@ search.addEventListener('click', ()=> {
             let humidity = document.querySelector('.weather-details .description');
             let wind = document.querySelector('.weather-details .wind');
 
-            switch (json.weather[0].main) {
+            switch (json.weather) {
                 case 'Clear':
                     image.src = 'images/clear.png';
                     break;
